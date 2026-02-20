@@ -1,0 +1,168 @@
+.app-shell {
+    height: 100vh;
+    height: 100dvh;
+    /* dynamic viewport — excludes browser UI on mobile/small windows */
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px 24px;
+    /* extra top padding clears browser tab + bookmark bars */
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 20% 50%, #0d1b3e 0%, #0a0e1a 60%),
+        radial-gradient(ellipse at 80% 20%, #120a2e 0%, transparent 60%);
+    box-sizing: border-box;
+}
+
+/* Ambient glow blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #3b6fd4, transparent);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #7c5cbf, transparent);
+    bottom: -80px;
+    right: -80px;
+    animation-delay: -3s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #4f8ef7, transparent);
+    top: 40%;
+    left: 60%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+/* Main container */
+.chat-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 780px;
+    height: 100%;
+    /* fills app-shell which already has 20px padding top/bottom */
+    max-height: 900px;
+    /* cap on very tall screens */
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 14, 30, 0.75);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 142, 247, 0.07);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.025);
+    flex-shrink: 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b6fd4, #7c5cbf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(79, 142, 247, 0.35);
+    flex-shrink: 0;
+}
+
+.header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #eef2ff;
+    letter-spacing: -0.3px;
+}
+
+.header-subtitle {
+    font-size: 0.72rem;
+    color: rgba(238, 242, 255, 0.45);
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: 0.4px;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #5af078;
+    background: rgba(90, 240, 120, 0.1);
+    border: 1px solid rgba(90, 240, 120, 0.2);
+    border-radius: 20px;
+    padding: 5px 12px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #5af078;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}

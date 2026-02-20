@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #0a0e1a;
+  --bg-mid: #0f1629;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --accent-blue: #4f8ef7;
+  --accent-purple: #7c5cbf;
+  --accent-glow: #3b6fd4;
+  --user-bubble: linear-gradient(135deg, #3b6fd4, #7c5cbf);
+  --bot-bubble: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #eef2ff;
+  --text-secondary: rgba(238, 242, 255, 0.55);
+  --text-source: #7c9ef5;
+  --shadow-glow: 0 0 40px rgba(79, 142, 247, 0.12);
+  --radius: 18px;
+  --radius-sm: 10px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow: hidden;
+}
