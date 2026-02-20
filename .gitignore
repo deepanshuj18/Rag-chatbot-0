@@ -8,11 +8,13 @@ venv/
 *.pyd
 *.db
 
+# ChromaDB vector store (local binary data, do not push)
+chroma_db_gemini/
+
 # Node / React
 node_modules/
 build/
 dist/
-.env
 
 # OS
 .DS_Store
