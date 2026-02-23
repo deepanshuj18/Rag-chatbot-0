@@ -1,4 +1,4 @@
-# WattMonk RAG Chatbot
+#  RAG Chatbot
 
 A **Retrieval Augmented Generation (RAG)** chatbot built with FastAPI and powered by Google Gemini. Upload documents (PDF or TXT), and ask questions — the chatbot retrieves relevant context from your knowledge base and generates accurate, source-grounded answers.
 
